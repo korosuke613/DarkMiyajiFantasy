@@ -27,7 +27,7 @@ public class Stage : MonoBehaviour {
 		{ 1, 1, 1, 0, 0, 0, 0, 0, 1, 1 },
 		{ 1, 1, 1, 1, 1, 0, 0, 0, 1, 1 },
 		{ 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 0, 2, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 2, 0, 1, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
 	};
 
@@ -53,13 +53,20 @@ public class Stage : MonoBehaviour {
 	};
 
 	private void CreateStage(){
+		//親となるコンテナを作成
 		boardHolder = new GameObject("Board").transform;
 
 		for(int i = 0; i < firstStageMapData.GetLength(0); i++){
 			for(int j = 0; j < firstStageMapData.GetLength(1); j++){
 				int num = firstStageMapData[i, j];
 				choiceData = oneGame[num];
-				GameObject obj = Instantiate(choiceData, new Vector3(i - ADJ_X, j - ADJ_Y, 0), Quaternion.identity) as GameObject;
+				// ゲームオブジェクトの生成
+				GameObject obj = Instantiate(
+					choiceData,  // 生成するデータ
+					new Vector3(i - ADJ_X, j - ADJ_Y, 0), //生成する場所 
+					Quaternion.identity) as GameObject;
+
+				//Boardコンテナにブロックを子として設定
 				obj.transform.SetParent(boardHolder);
 			}
 		}
@@ -67,6 +74,6 @@ public class Stage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		CreateStage ();			
+		CreateStage ();
 	}
 }
