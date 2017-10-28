@@ -41,4 +41,16 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D collision_event){
+		if (collision_event.gameObject.tag == "Ground") {
+			isJumped = false;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collider_event){
+		if (collider_event.gameObject.tag == "Flag") {
+			Destroy (collider_event);
+			hasGameClear = true;
+		}
+	}
 }
