@@ -13,7 +13,12 @@ public class SceneChanger : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0) || Input.GetKeyDown (KeyCode.Return) || Input.GetKeyDown ("space")) {
-			SceneManager.LoadScene ("Main");
+			if (Player.hasGameClear == true) {
+				Player.hasGameClear = false;
+				SceneManager.LoadScene ("Title");
+			} else {
+				SceneManager.LoadScene ("FallStage");
+			}
 		}
 	}
 }
