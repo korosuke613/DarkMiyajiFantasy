@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	private bool isJumped = false;
@@ -17,7 +18,10 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 		if (hasGameClear == false) {
 			Move ();
+		} else {
+			SceneManager.LoadScene ("GameClear");
 		}
+
 	}
 
 	void Move(){
