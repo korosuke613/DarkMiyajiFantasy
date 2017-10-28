@@ -13,7 +13,7 @@ public class Stage : MonoBehaviour {
 	private int[,] firstStageMapData = {
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 		{ 1, 1, 1, 1, 1, 0, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 },
+		{ 1, 1, 1, 1, 3, 0, 0, 0, 1, 1 },
 		{ 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 },
 		{ 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 },
 		{ 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 },
@@ -71,7 +71,7 @@ public class Stage : MonoBehaviour {
 			}
 		}
 	}
-
+		
 	// Use this for initialization
 	void Start () {
 		CreateStage (firstStageMapData);
