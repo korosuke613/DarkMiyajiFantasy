@@ -33,32 +33,32 @@ public class Stage : MonoBehaviour {
 
 	private int[,] secondStageMapData = {
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 1, 0, 0, 1, 0, 0, 1, 1 },
-		{ 1, 1, 1, 0, 0, 1, 0, 0, 0, 1 },
-		{ 1, 1, 1, 0, 0, 1, 0, 0, 0, 1 },
-		{ 1, 1, 1, 0, 0, 1, 2, 0, 0, 1 },
-		{ 1, 1, 0, 0, 0, 1, 1, 0, 0, 1 },
-		{ 1, 1, 0, 0, 0, 1, 1, 0, 0, 1 },
-		{ 1, 1, 0, 0, 0, 1, 0, 0, 0, 1 },
-		{ 1, 1, 0, 0, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 0, 0, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 1, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 0, 1, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
 	};
 
-	private void CreateStage(){
+	private void CreateStage(int [,] stageMap){
 		//親となるコンテナを作成
 		boardHolder = new GameObject("Board").transform;
 
-		for(int i = 0; i < firstStageMapData.GetLength(0); i++){
-			for(int j = 0; j < firstStageMapData.GetLength(1); j++){
-				int num = firstStageMapData[i, j];
+		for(int i = 0; i < stageMap.GetLength(0); i++){
+			for(int j = 0; j < stageMap.GetLength(1); j++){
+				int num = stageMap[i, j];
 				choiceData = oneGame[num];
 				// ゲームオブジェクトの生成
 				GameObject obj = Instantiate(
@@ -74,6 +74,6 @@ public class Stage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		CreateStage ();
+		CreateStage (firstStageMapData);
 	}
 }
