@@ -7,11 +7,19 @@ public class Player : MonoBehaviour {
 	private bool isJumped = false;
 	private float jump_power = 300.0f;
 	private float move_speed = 0.08f;
-	private bool hasGameClear = false;
+	public static bool hasGameClear = false;
+	public static int MiyajiPoint;
+	public bool hasMiyaji = true;
+	private GameObject MiyajiPointUI = null;
+	UpdateMIYAJI MiyajiTextScript;
 
 	// Use this for initialization
 	void Start () {
-		
+		MiyajiPoint = 0;
+	}
+	void Awake()
+	{
+		DontDestroyOnLoad(this.gameObject);
 	}
 
 	// Update is called once per frame
@@ -19,7 +27,12 @@ public class Player : MonoBehaviour {
 		if (hasGameClear == false) {
 			Move ();
 		} else {
+			//MiyajiPointUI = GameObject.FindWithTag ("MiyajiClearUI");
+			//MiyajiTextScript = MiyajiPointUI.GetComponent<UpdateMIYAJI> ();
+
 			SceneManager.LoadScene ("GameClear");
+			//MiyajiTextScript.UpdateText (MiyajiPoint.ToString() + " MIYAJI");
+
 		}
 
 	}
@@ -47,6 +60,13 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision_event){
 		if (collision_event.gameObject.tag == "Ground") {
+			isJumped = false;
+		}
+		if (collision_event.gameObject.tag == "MiyajiGround") {
+			if (hasMiyaji == false) {
+				MiyajiPoint++;
+				hasMiyaji = true;
+			}
 			isJumped = false;
 		}
 	}
