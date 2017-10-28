@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage : MonoBehaviour {
+public class FallStage : MonoBehaviour {
+	public GameObject Player;
 	public GameObject[] oneGame;
 	private Transform boardHolder;
 
@@ -10,26 +11,27 @@ public class Stage : MonoBehaviour {
 	private const float ADJ_X = 8.5f;
 	private const float ADJ_Y = 4.5f;
 
-	private int[,] firstStageMapData = {
+	private int[,] startStage = {
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 1, 1, 1, 1, 0, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 3, 0, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 0, 0, 0, 0, 1, 1 },
-		{ 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 },
-		{ 1, 1, 0, 0, 0, 0, 0, 0, 1, 1 },
-		{ 1, 1, 0, 0, 0, 0, 0, 0, 1, 1 },
-		{ 1, 1, 0, 0, 1, 1, 0, 1, 1, 1 },
-		{ 1, 1, 0, 0, 1, 1, 0, 1, 1, 1 },
-		{ 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 1, 1, 1 },
-		{ 1, 1, 1, 0, 0, 0, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 0, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 0, 0, 1, 1 },
-		{ 1, 1, 1, 1, 1, 1, 2, 0, 1, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 3, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
+		{ 0, 0, 0, 0, 0, 0, 1, 0, 0, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
 	};
+
 
 	private void CreateStage(int [,] stageMap){
 		//親となるコンテナを作成
@@ -50,9 +52,9 @@ public class Stage : MonoBehaviour {
 			}
 		}
 	}
-		
+
 	// Use this for initialization
 	void Start () {
-		CreateStage (firstStageMapData);
+		CreateStage(startStage);
 	}
 }

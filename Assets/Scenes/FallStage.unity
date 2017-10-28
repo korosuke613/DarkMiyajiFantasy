@@ -112,6 +112,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1211187820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1211187822}
+  - component: {fileID: 1211187821}
+  m_Layer: 0
+  m_Name: Stage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1211187821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1211187820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27f32652da5d4688ba2975fc7bfaa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1258654368367364, guid: ed60fdfe8002945cda89d5e9ee34d62f, type: 2}
+  oneGame:
+  - {fileID: 1045479429059600, guid: de8145e1fc8764764bb9882947d12f99, type: 2}
+  - {fileID: 1179686782659528, guid: 599c262149caa4e2cb63e4cabbaa1152, type: 2}
+  - {fileID: 1922121091112914, guid: cdfb97d503d234951b89064831740eef, type: 2}
+  - {fileID: 1258654368367364, guid: ed60fdfe8002945cda89d5e9ee34d62f, type: 2}
+--- !u!4 &1211187822
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1211187820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02, y: -0.13, z: -9.888377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1946988757
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +169,7 @@ GameObject:
   - component: {fileID: 1946988760}
   - component: {fileID: 1946988759}
   - component: {fileID: 1946988758}
+  - component: {fileID: 1946988762}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -153,7 +200,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -192,3 +239,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946988762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946988757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3e83fbff77a411cb75a545cfd2897f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
