@@ -126,10 +126,10 @@ public class FallStage : MonoBehaviour {
 				DestroyAddedStage ();
 				AddStage (5);
 				PlayerScript.hasMiyaji = false;
-				MiyajiTextScript.UpdateText (Player.MiyajiPoint.ToString ());
 			} else {
 				Player.hasGameClear = true;
 			}
 		}
+		MiyajiTextScript.UpdateText (Score.MiyajiPoint.ToString ());
 	}
 }

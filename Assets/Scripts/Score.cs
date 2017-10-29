@@ -14,4 +14,17 @@ public class Score : MonoBehaviour {
 	void Update () {
 
 	}
+
+	public void ResetMiyajiPoint(){
+		MiyajiPoint = 0;
+	}
+
+	public void ResetTotalMiyajiPoint(){
+		MiyajiPointTotal = 0;
+	}
+
+	public static void AddMiyajiPoint(int additional){
+		MiyajiPoint += additional;
+		MiyajiPointTotal += additional;
+	}
 }

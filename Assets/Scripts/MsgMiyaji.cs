@@ -16,6 +16,6 @@ public class MsgMiyaji : MonoBehaviour {
 
 	public void UpdateText(){
 		text = this.GetComponent<Text>(); // <---- 追加3
-		text.text = Player.MiyajiPoint.ToString() + " MIYAJI"; // <---- 追加4
+		text.text = Score.MiyajiPoint.ToString() + " MIYAJI"; // <---- 追加4
 	}
 }
