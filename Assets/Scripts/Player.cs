@@ -27,12 +27,7 @@ public class Player : MonoBehaviour {
 		if (hasGameClear == false) {
 			Move ();
 		} else {
-			//MiyajiPointUI = GameObject.FindWithTag ("MiyajiClearUI");
-			//MiyajiTextScript = MiyajiPointUI.GetComponent<UpdateMIYAJI> ();
-
 			SceneManager.LoadScene ("GameClear");
-			//MiyajiTextScript.UpdateText (MiyajiPoint.ToString() + " MIYAJI");
-
 		}
 
 	}
@@ -56,6 +51,7 @@ public class Player : MonoBehaviour {
 			this.transform.GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jump_power);
 			isJumped = true;
 		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D collision_event){
